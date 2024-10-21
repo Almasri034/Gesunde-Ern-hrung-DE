@@ -5,92 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gesunde Ernährung</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #305640;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            width: 90px;
-            height: auto;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        section {
-            padding: 20px;
-            margin: 20px 0;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #305640;
-            color: white;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
-        form label {
-            font-weight: bold;
-        }
-
-        form input, form select {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            background-color: #305640;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        button:hover {
-            background-color: #305640;
-        }
-
-    </style>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -163,28 +78,5 @@
         <p>&copy; 2024 Ahmad Almasri. Alle Rechte vorbehalten.</p>
     </footer>
 
-    <script>
-        document.getElementById('calorieForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const gender = document.getElementById('gender').value;
-            const weight = parseFloat(document.getElementById('weight').value);
-            const height = parseFloat(document.getElementById('height').value);
-            const age = parseFloat(document.getElementById('age').value);
-            const activity = parseFloat(document.getElementById('activity').value);
-
-            // BMR Berechnung basierend auf Geschlecht
-            let bmr;
-            if (gender === 'male') {
-                bmr = 10 * weight + 6.25 * height - 5 * age + 5;  // Männer
-            } else {
-                bmr = 10 * weight + 6.25 * height - 5 * age - 161; // Frauen
-            }
-
-            const calories = bmr * activity;
-
-            document.getElementById('result').textContent = `Ihr täglicher Kalorienbedarf beträgt: ${Math.round(calories)} Kalorien.`;
-        });
-    </script>
 </body>
 </html>
