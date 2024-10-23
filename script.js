@@ -1,6 +1,6 @@
 (function(){
 
-         "use strict"
+         "use strict";
 
     document.getElementById('calorieForm').addEventListener('submit', function(event) {
         event.preventDefault();
